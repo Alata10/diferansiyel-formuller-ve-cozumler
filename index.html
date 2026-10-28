@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diferansiyel Denklemler · Hangi Formül Uygulanır? &amp; 5-6-7. Hafta Tüm PDF Çözümleri</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+  <style>
+    :root {
+      --bg: #f4f6fb;
+      --card: #ffffff;
+      --ink: #141b2d;
+      --muted: #556078;
+      --line: #dfe5f2;
+      --pri: #364fc7;
+      --pri-light: #edf2ff;
+      --vio: #6741d9;
+      --vio-light: #f3f0ff;
+      --ok: #2b8a3e;
+      --ok-bg: #ebfbee;
+      --bad: #c92a2a;
+      --bad-bg: #fff5f5;
+      --warn: #d9480f;
+      --warn-bg: #fff4e6;
+      --gold-bg: #fff9db;
+      --gold-bd: #fcc419;
+      --radius: 16px;
+      --shadow: 0 2px 6px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(15, 23, 42, 0.06);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.62;
+      font-size: 16px;
+    }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+
+    /* HERO */
+    .hero {
+      background: radial-gradient(1000px 420px at 15% -10%, #4c6ef5 0%, transparent 65%),
+                  linear-gradient(135deg, #111936 0%, #2b2467 52%, #5f3dc4 100%);
+      color: #fff;
+      padding: 36px 0 42px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      padding: 5px 14px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+    .hero h1 {
+      font-size: clamp(1.65rem, 3.8vw, 2.45rem);
+      line-height: 1.2;
+      margin: 14px 0 10px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+    .hero p {
+      margin: 0;
+      opacity: 0.92;
+      max-width: 780px;
+      font-size: 1.02rem;
+    }
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+    .hero-stat {
+      background: rgba(255, 255, 255, 0.11);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 12px;
+      padding: 10px 15px;
+      font-size: 0.86rem;
+    }
+    .hero-stat b { display: block; font-size: 1.2rem; color: #ffd43b; }
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+    .hero-cta a {
+      text-decoration: none;
+      font-weight: 800;
+      padding: 11px 18px;
+      border-radius: 12px;
+      font-size: 0.93rem;
+      transition: transform 0.15s;
+    }
+    .hero-cta a:hover { transform: translateY(-2px); }
+    .hero-cta a.pri { background: #ffd43b; color: #111936; }
+    .hero-cta a.sec { background: rgba(255,255,255,0.14); color: #fff; border: 1px solid rgba(255,255,255,0.35); }
+
+    /* STICKY NAV */
+    nav.topnav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+    nav.topnav .wrap {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding: 9px 16px;
+    }
+    nav.topnav a {
+      white-space: nowrap;
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.88rem;
+      padding: 8px 13px;
+      border-radius: 10px;
+      transition: all 0.15s;
+    }
+    nav.topnav a:hover, nav.topnav a.active {
+      background: var(--pri-light);
+      color: var(--pri);
+    }
+
+    /* SECTIONS & CARDS */
+    section.sec { padding: 34px 0 12px; }
+    .sec-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+    .sec-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 13px;
+      background: linear-gradient(135deg, var(--pri), var(--vio));
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+    .sec-head h2 { margin: 0; font-size: clamp(1.35rem, 2.6vw, 1.7rem); font-weight: 800; }
+    .sec-lead { color: var(--muted); margin: 0 0 20px; font-size: 0.98rem; }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow);
+    }
+    .card h3 { margin: 0 0 10px; font-size: 1.15rem; font-weight: 800; }
+
+    /* WIZARD (SORU TEŞHİS SİHİRBAZI) */
+    .wiz-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .wiz-btn {
+      text-align: left;
+      background: #fff;
+      border: 2px solid var(--line);
+      border-radius: 14px;
+      padding: 15px 16px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.16s;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .wiz-btn:hover {
+      border-color: #748ffc;
+      background: #f8faff;
+      transform: translateY(-2px);
+    }
+    .wiz-btn.active {
+      border-color: var(--pri);
+      background: var(--pri-light);
+      box-shadow: 0 4px 14px rgba(54, 79, 199, 0.16);
+    }
+    .wiz-btn .wb-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .wiz-btn .wb-tag {
+      font-size: 0.74rem;
+      font-weight: 800;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: var(--vio-light);
+      color: var(--vio);
+      text-transform: uppercase;
+    }
+    .wiz-btn .wb-title {
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--ink);
+    }
+    .wiz-btn .wb-sub {
+      font-size: 0.87rem;
+      color: var(--muted);
+    }
+
+    .wiz-panel {
+      background: linear-gradient(180deg, #ffffff 0%, #f8faff 100%);
+      border: 2px solid var(--pri);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      margin-bottom: 22px;
+      box-shadow: 0 8px 26px rgba(54, 79, 199, 0.12);
+    }
+    .wiz-panel h3 {
+      margin: 0 0 8px;
+      color: var(--pri);
+      font-size: 1.28rem;
+    }
+
+    .f-box {
+      background: #141b2d;
+      color: #fff;
+      border-radius: 13px;
+      padding: 14px 18px;
+      margin: 12px 0;
+      overflow-x: auto;
+      border-left: 5px solid #ffd43b;
+    }
+    .f-box .fb-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #ffd43b;
+      font-weight: 800;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .sub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .sub-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      padding: 14px 16px;
+    }
+    .sub-card h4 {
+      margin: 0 0 6px;
+      font-size: 0.96rem;
+      color: var(--vio);
+    }
+
+    /* TABLE */
+    .tbl-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.91rem;
+    }
+    th, td {
+      padding: 11px 13px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f1f4fb;
+      font-weight: 800;
+      color: var(--ink);
+    }
+    tr:last-child td { border-bottom: none; }
+
+    /* MEMORY & LEARNING CARDS */
+    .mem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 16px;
+    }
+    .mem-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      box-shadow: var(--shadow);
+      border-top: 4px solid var(--vio);
+    }
+    .mem-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.08rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .code-pill {
+      display: inline-block;
+      background: var(--gold-bg);
+      border: 1px solid var(--gold-bd);
+      color: #8a5a00;
+      font-weight: 800;
+      font-size: 0.8rem;
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+    }
+
+    /* FILTER BAR FOR PDF QUESTIONS */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 14px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow);
+    }
+    .f-btn {
+      border: 1px solid var(--line);
+      background: #f8f9fc;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 7px 13px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.14s;
+    }
+    .f-btn:hover { border-color: var(--pri); color: var(--pri); }
+    .f-btn.active {
+      background: var(--pri);
+      color: #fff;
+      border-color: var(--pri);
+    }
+    .search-inp {
+      margin-left: auto;
+      min-width: 220px;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.88rem;
+    }
+
+    /* QUESTION SOLUTION ACCORDION / CARDS */
+    .q-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      margin-bottom: 14px;
+      box-shadow: var(--shadow);
+    }
+    .q-top {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .q-badge {
+      background: var(--ink);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 8px;
+    }
+    .q-topic {
+      background: var(--vio-light);
+      color: var(--vio);
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+    .q-body {
+      font-size: 1.03rem;
+      font-weight: 600;
+      margin: 8px 0 12px;
+    }
+    .spot-box {
+      background: #e7f5ff;
+      border: 1px solid #a5d8ff;
+      border-radius: 12px;
+      padding: 11px 14px;
+      margin-bottom: 10px;
+      font-size: 0.92rem;
+    }
+    .spot-box b.lbl {
+      color: #1864ab;
+      display: block;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 2px;
+    }
+    .formula-strip {
+      background: #f8f0fc;
+      border: 1px solid #d0bfff;
+      border-radius: 12px;
+      padding: 9px 14px;
+      margin-bottom: 12px;
+      font-size: 0.92rem;
+      overflow-x: auto;
+    }
+    .formula-strip b.lbl {
+      color: var(--vio);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .steps-list {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0 0;
+    }
+    .steps-list li {
+      position: relative;
+      padding: 0 0 14px 42px;
+    }
+    .steps-list li::before {
+      content: attr(data-step);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--pri), var(--vio));
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.82rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .steps-list li::after {
+      content: "";
+      position: absolute;
+      left: 13px;
+      top: 30px;
+      bottom: 2px;
+      width: 2px;
+      background: #dbe4ff;
+    }
+    .steps-list li:last-child::after { display: none; }
+    .steps-list li b.st-t {
+      display: block;
+      font-size: 0.95rem;
+      margin-bottom: 3px;
+      color: var(--ink);
+    }
+    .steps-list li .st-d {
+      font-size: 0.93rem;
+      color: #2b3448;
+      overflow-x: auto;
+    }
+    .trap-box {
+      background: var(--bad-bg);
+      border: 1px solid #ffc9c9;
+      border-radius: 11px;
+      padding: 10px 14px;
+      margin-top: 8px;
+      font-size: 0.89rem;
+      color: #961e1e;
+    }
+
+    /* 7. HAFTA QUIZ STYLES */
+    .quiz-bar {
+      position: sticky;
+      top: 52px;
+      z-index: 30;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 10px 15px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow);
+    }
+    .q-block-banner {
+      background: linear-gradient(135deg, #edf2ff, #f3f0ff);
+      border: 1px solid #bac8ff;
+      border-radius: 14px;
+      padding: 13px 18px;
+      margin: 22px 0 12px;
+    }
+    .q-block-banner .b-title {
+      font-weight: 800;
+      color: var(--pri);
+      font-size: 0.92rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .opts-grid {
+      display: grid;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .opt-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border: 1.5px solid var(--line);
+      border-radius: 12px;
+      padding: 10px 14px;
+      cursor: pointer;
+      background: #fff;
+      transition: all 0.12s;
+    }
+    .opt-row:hover { border-color: #91a7ff; background: #f8faff; }
+    .opt-row .opt-l {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #f1f3f9;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+    .opt-row.ok { border-color: #69db7c; background: var(--ok-bg); }
+    .opt-row.ok .opt-l { background: var(--ok); color: #fff; }
+    .opt-row.bad { border-color: #ff8787; background: var(--bad-bg); }
+    .opt-row.bad .opt-l { background: var(--bad); color: #fff; }
+
+    .btn-sm {
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.8rem;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .btn-sm.pri {
+      background: var(--pri);
+      color: #fff;
+      border-color: var(--pri);
+    }
+
+    .katex-display { overflow-x: auto; overflow-y: hidden; padding: 4px 0; margin: 6px 0 !important; }
+    footer {
+      text-align: center;
+      padding: 36px 16px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      border-top: 1px solid var(--line);
+      margin-top: 40px;
+    }
+    @media (max-width: 640px) {
+      .card, .q-card, .wiz-panel { padding: 15px 16px; }
+      .search-inp { width: 100%; margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="wrap">
+      <span class="hero-badge">🎓 Prof. Dr. Gözde ÖZKAN TÜKEL · 5, 6 ve 7. Hafta Tam Rehber</span>
+      <h1>Soruya Bakınca Hangi Formülü Uygulayacağım?<br>PDF'lerde Ne Çıkmış &amp; Nasıl Öğrenmeliyim?</h1>
+      <p>
+        “Özel çözüm verildiğinde hangi formül yazılır?”, “Tam diferansiyel mi, integral çarpanı mı, Bernoulli mi nasıl 5 saniyede anlaşılır?” sorularının cevabı ve <b>4 PDF'teki tüm konu özetleri, 32 çözümlü örnek, 22 sıra sizde/alıştırma ve 23 vize hazırlık sorusunun</b> eksiksiz adım adım çözümleri tek adreste.
+      </p>
+      <div class="hero-stats">
+        <div class="hero-stat"><b>5 Saniye</b>Soru Teşhis Sihirbazı</div>
+        <div class="hero-stat"><b>4 PDF</b>5, 6 ve 7. Hafta Tamamı</div>
+        <div class="hero-stat"><b>54 Soru</b>Ders İçi Örnek &amp; Alıştırma</div>
+        <div class="hero-stat"><b>23 Soru</b>7. Hafta Vize Hazırlık Testi</div>
+      </div>
+      <div class="hero-cta">
+        <a href="#teshis" class="pri">🎯 Hangi Formülü Uygulamalıyım? (Tıkla Bul)</a>
+        <a href="#ogrenme" class="sec">🧠 Formülleri Nasıl Ezberlemeden Bilirim?</a>
+        <a href="#pdfler" class="sec">📚 PDF'lerdeki Tüm Örnekler (5-6. Hafta)</a>
+        <a href="#vize7" class="sec">📝 7. Hafta 23 Vize Sorusu</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- STICKY NAV -->
+  <nav class="topnav">
+    <div class="wrap">
+      <a href="#teshis">🎯 1. Hangi Formül Uygulanır? (Karar Sihirbazı)</a>
+      <a href="#tablo">⚡ 2. Tek Bakışta Tüm Formüller Tablosu</a>
+      <a href="#ogrenme">🧠 3. Nasıl Öğrenmeliyim &amp; Hafıza Kodlamaları</a>
+      <a href="#pdfler">📚 4. PDF'lerde Ne Çıkmış? (54 Çözümlü Soru)</a>
+      <a href="#vize7">📝 5. 7. Hafta Vize Hazırlık (23 Test Sorusu)</a>
+      <a href="https://alata10.github.io/diferansiyel-vize-deneme/" target="_blank" style="color:var(--vio);">🔥 A/B Grubu Tahmini Deneme Sınavı ↗</a>
+    </div>
+  </nav>
+
+  <div class="wrap">
+
+    <!-- =====================================================================
+         BÖLÜM 1: HANGİ FORMÜLÜ UYGULAMALIYIM? (İNTERAKTİF KARAR SİHİRBAZI)
+         ===================================================================== -->
+    <section class="sec" id="teshis">
+      <div class="sec-head">
+        <div class="sec-icon">🎯</div>
+        <h2>Soruyu Görünce Hangi Formülü Uygulamalıyım?</h2>
+      </div>
+      <p class="sec-lead">
+        Sınavda soruya baktığında <b>gördüğün ipucuna aşağıdan tıkla</b>: Sana o sorunun hangi tipte olduğunu, hangi formülü yazman gerektiğini ve hangi sırayla çözeceğini anında göstersin!
+      </p>
+
+      <!-- 6 ANA TEŞHİS BUTONU -->
+      <div class="wiz-grid" id="wizButtons">
+        <button class="wiz-btn active" onclick="selectWizard('riccati', this)">
+          <div class="wb-top"><span class="wb-tag">En Kolay Tanınan!</span><span>🔥</span></div>
+          <div class="wb-title">Soruda “bir özel çözümü \(y_1 = \dots\)” yazıyor!</div>
+          <div class="wb-sub">Veya 2 özel çözüm (\(y_1, y_2\)), 3 özel çözüm (\(y_1, y_2, y_3\)) verilmiş.</div>
+        </button>
+
+        <button class="wiz-btn" onclick="selectWizard('bernoulli', this)">
+          <div class="wb-top"><span class="wb-tag">6. Hafta · Bölüm 6.4</span><span>⚡</span></div>
+          <div class="wb-title">Özel çözüm yok ama sağda \(y^2, y^3, y^4\) (\(y^n\)) var!</div>
+          <div class="wb-sub">\(y' + P(x)y = Q(x)y^n\) biçiminde; sağda yalnız \(x\)'li terim yok.</div>
+        </button>
+
+        <button class="wiz-btn" onclick="selectWizard('lineer', this)">
+          <div class="wb-top"><span class="wb-tag">6. Hafta · Bölüm 6.1</span><span>📐</span></div>
+          <div class="wb-title">Sadece \(y'\) ve \(y\) var (\(y' + P(x)y = Q(x)\))!</div>
+          <div class="wb-sub">\(y\)'nin kuvveti 1 (veya ters çevrilince \(x\)'in kuvveti 1).</div>
+        </button>
+
+        <button class="wiz-btn" onclick="selectWizard('homojen_don', this)">
+          <div class="wb-top"><span class="wb-tag">5. Hafta · Bölüm 1</span><span>🧭</span></div>
+          <div class="wb-title">Parantezlerde \((ax + by + c)\) sabitli doğrular var!</div>
+          <div class="wb-sub">Örn: \((x+y-3)dx + (x-y-1)dy = 0\) veya \(y' = \frac{x-y+4}{x+y-2}\).</div>
+        </button>
+
+        <button class="wiz-btn" onclick="selectWizard('tam', this)">
+          <div class="wb-top"><span class="wb-tag">5. Hafta · Bölüm 2</span><span>💍</span></div>
+          <div class="wb-title">\(M\,dx + N\,dy = 0\) biçiminde ve \(M_y = N_x\) çıkıyor!</div>
+          <div class="wb-sub">\(dx\)'in yanındakinin \(y\)'ye türevi = \(dy\)'nin yanındakinin \(x\)'e türevi.</div>
+        </button>
+
+        <button class="wiz-btn" onclick="selectWizard('integral_carpani', this)">
+          <div class="wb-top"><span class="wb-tag">5. Hafta · Bölüm 2</span><span>🧲</span></div>
+          <div class="wb-title">\(M\,dx + N\,dy = 0\) ama \(M_y \neq N_x\) (Tam Değil)!</div>
+          <div class="wb-sub">“İntegral çarpanı \(\mu\) nedir?” diye soruluyor veya tam diferansiyel çıkmıyor.</div>
+        </button>
+      </div>
+
+      <!-- SİHİRBAZ DETAY PANELİ -->
+      <div class="wiz-panel" id="wizPanel"></div>
+    </section>
+
+    <!-- =====================================================================
+         BÖLÜM 2: TEK BAKIŞTA TÜM FORMÜLLER KARŞILAŞTIRMA TABLOSU
+         ===================================================================== -->
+    <section class="sec" id="tablo">
+      <div class="sec-head">
+        <div class="sec-icon">⚡</div>
+        <h2>Tek Bakışta Tüm Formüller: Soruda Ne Görürsen Ne Yapacaksın?</h2>
+      </div>
+      <p class="sec-lead">
+        5, 6 ve 7. hafta PDF'lerinde geçen tüm denklem tiplerinin <b>tanıma kuralı</b>, <b>dönüşümü</b> ve <b>çözüm formülü</b> tek tabloda:
+      </p>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Denklem Tipi</th>
+              <th>Soruda Nasıl Görünür? (İpucu)</th>
+              <th>Uygulayacağın Dönüşüm / Formül</th>
+              <th>En Sık Yapılan Sınav Hatası</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>1. Homojene Dönüştürülebilen (Kesişen Doğrular)</b><br><small>5. Hafta Böl.1</small></td>
+              <td>\(\frac{dy}{dx} = F\!\left(\frac{a_1x+b_1y+c_1}{a_2x+b_2y+c_2}\right)\)<br>ve \(\frac{a_1}{a_2} \neq \frac{b_1}{b_2}\)</td>
+              <td>
+                1) Doğruları \(0\)'a eşitle, kesim noktası \((h,k)\) bul.<br>
+                2) \(x = X+h,\; y = Y+k\) yaz (sabitler yok olur).<br>
+                3) \(Y = UX \implies dY = U\,dX + X\,dU\) ile çöz.<br>
+                4) En son \(X = x-h,\; Y = y-k\) geri yaz!
+              </td>
+              <td>En sonda \(X\) ve \(Y\) yerine \(x-h\) ve \(y-k\) yazmayı unutmak veya \(h\) ile \(k\)'nın işaretini ters almak.</td>
+            </tr>
+            <tr>
+              <td><b>2. Homojene Dönüştürülebilen (Paralel Doğrular)</b><br><small>5. Hafta Böl.1</small></td>
+              <td>\(\frac{a_1}{a_2} = \frac{b_1}{b_2}\)<br>Örn: \((x+y+1)dx + (2x+2y-1)dy = 0\)</td>
+              <td>
+                Kesim noktası yoktur! Ortak ifadeye:<br>
+                \(z = a_1x + b_1y\) dönüşümü yap.<br>
+                Denklem doğrudan değişkenlerine ayrılır.
+              </td>
+              <td>Paralel doğrularda \((h,k)\) aramaya çalışıp vakit kaybetmek.</td>
+            </tr>
+            <tr>
+              <td><b>3. Tam Diferansiyel Denklem</b><br><small>5. Hafta Böl.2</small></td>
+              <td>\(M(x,y)dx + N(x,y)dy = 0\)<br>ve çapraz türevler eşit:<br>\(\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}\)</td>
+              <td>
+                \(F(x,y) = \int M(x,y)dx + \phi(y)\)<br>
+                \(\frac{\partial F}{\partial y} = N(x,y) \implies \phi'(y)\) bulunur.<br>
+                <b>Pratik:</b> \(\int M\,dx + \int (N\text{'deki }x\text{'siz terimler})dy = c\)
+              </td>
+              <td>\(M\)'nin \(x\)'e göre türevini almak (oysa çapraz türev: \(M_y = N_x\) alınır!) veya sonda \(= c\) yazmayı unutmak.</td>
+            </tr>
+            <tr>
+              <td><b>4. İntegral Çarpanı (\(\mu\))</b><br><small>5. Hafta Böl.2</small></td>
+              <td>\(M\,dx + N\,dy = 0\)<br>ama \(M_y \neq N_x\)</td>
+              <td>
+                • <b>Yalnız \(x\):</b> \(f(x) = \frac{M_y - N_x}{N} \implies \mu(x) = e^{\int f(x)dx}\)<br>
+                • <b>Yalnız \(y\):</b> \(g(y) = \frac{N_x - M_y}{M} \implies \mu(y) = e^{\int g(y)dy}\)<br>
+                • <b>\(xy\) çarpımlı:</b> \(yf(xy)dx + xg(xy)dy=0 \implies \mu = \frac{1}{xM - yN}\)<br>
+                • <b>Homojen ise:</b> \(\mu = \frac{1}{xM + yN}\)
+              </td>
+              <td>\(\mu(y)\) formülünde paydaya \(M\) yazarken öndeki eksi işaretini (\(N_x - M_y\)) unutmak!</td>
+            </tr>
+            <tr>
+              <td><b>5. Lineer Denklem</b><br><small>6. Hafta Böl.6.1</small></td>
+              <td>\(\frac{dy}{dx} + P(x)y = Q(x)\)<br>(veya \(\frac{dx}{dy} + P(y)x = Q(y)\))</td>
+              <td>
+                1) Önce \(y'\)'nün katsayısını \(1\) yap!<br>
+                2) \(\mu(x) = e^{\int P(x)dx}\)<br>
+                3) <b>Genel Çözüm:</b> \(\mu(x)\cdot y = \int \mu(x)Q(x)dx + c\)
+              </td>
+              <td>\(xy' + 2y = 4x^2\) gibi soruda \(x\)'e bölmeden \(P(x)=2\) almak!</td>
+            </tr>
+            <tr>
+              <td><b>6. Bernoulli Denklemi</b><br><small>6. Hafta Böl.6.4</small></td>
+              <td>\(\frac{dy}{dx} + P(x)y = Q(x)y^n\)<br>(Sağda \(y^2, y^3, y^4\) var)</td>
+              <td>
+                \(z = y^{1-n}\) dönüşümü yap!<br>
+                <b>Kısayol Lineer Denklem:</b><br>
+                \(\frac{dz}{dx} + (1-n)P(x)z = (1-n)Q(x)\)
+              </td>
+              <td>\((1-n)\) katsayısını sadece \(P\) ile çarpıp sağdaki \(Q\) ile çarpmayı unutmak; sonda \(z = y^{1-n}\) geri koymamak.</td>
+            </tr>
+            <tr>
+              <td><b>7. Riccati Denklemi</b><br><small>6. Hafta Böl.6.7</small></td>
+              <td>\(\frac{dy}{dx} + P(x)y + R(x) = Q(x)y^2\)<br><b>Soruda “bir özel çözümü \(y_1 = \dots\)” yazar!</b></td>
+              <td>
+                • <b>Doğrudan Lineere:</b> \(y = y_1 + \frac{1}{z} \implies y' = y_1' - \frac{z'}{z^2}\)<br>
+                • <b>Önce Bernoulli'ye:</b> \(y = y_1 + z \implies y' = y_1' + z'\) (sonra \(u = 1/z\))<br>
+                • <b>2 Özel Çözüm:</b> \(\frac{y-y_1}{y-y_2} = c\,e^{\int (y_1-y_2)Q(x)dx}\)<br>
+                • <b>3 Özel Çözüm:</b> \(\frac{y-y_1}{y-y_2}\cdot\frac{y_3-y_2}{y_3-y_1} = c\)
+              </td>
+              <td>\(y = y_1 + \frac{1}{z}\) türevinde \(-\frac{z'}{z^2}\) eksisini unutmak!</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         BÖLÜM 3: FORMÜLLERİ NASIL BİLMELİYİM & NASIL ÖĞRENMELİYİM?
+         ===================================================================== -->
+    <section class="sec" id="ogrenme">
+      <div class="sec-head">
+        <div class="sec-icon">🧠</div>
+        <h2>Formülleri Nasıl Bilmeliyim &amp; Nasıl Öğrenmeliyim?</h2>
+      </div>
+      <p class="sec-lead">
+        Formülleri kuru kuruya ezberlersen sınav heyecanıyla işaretleri karıştırırsın. İşte <b>mantığıyla kodlayarak sıfır hatayla bilme</b> rehberi ve çalışma sırası:
+      </p>
+
+      <div class="mem-grid">
+        <!-- KART 1: RİCCATİ -->
+        <div class="mem-card">
+          <span class="code-pill">Kodlama #1 · Özel Çözüm = Riccati</span>
+          <h3>🔥 Riccati Formüllerini Nasıl Aklımda Tutarım?</h3>
+          <p style="font-size:0.92rem;color:var(--muted);margin-top:0;">
+            Soruda <b>“bir özel çözümü \(y_1 = \dots\)”</b> gördüğün saniye başka hiçbir şey düşünme: Bu soru %100 <b>Riccati</b>'dir!
+          </p>
+          <ul style="padding-left:18px;font-size:0.92rem;margin:0;">
+            <li><b>Hangi dönüşümü seçeceğim?</b>
+              <ul>
+                <li>Eğer soru doğrudan genel çözümü istiyorsa veya <i>“\(y = y_1 + \frac{1}{z}\) dönüşümüyle elde edilen lineer denklem”</i> diyorsa: <b>Kesirli dönüşüm (\(y = y_1 + \frac{1}{z}\))</b> kullan. Çünkü tek adımda Lineer yapar!</li>
+                <li>Eğer soruda <i>“\(y = y_1 + z\) dönüşümüyle elde edilen Bernoulli denklemi”</i> diyorsa (7. Hafta Soru 21-23 gibi): <b>Kesirsiz dönüşüm (\(y = y_1 + z\))</b> kullan, sonra \(u = \frac{1}{z}\) ile lineere geç!</li>
+              </ul>
+            </li>
+            <li><b>Altın Sağlama Kuralı:</b> Dönüşümü denklemde yerine koyduğunda, içinde \(z\) olmayan (yalnız \(x\)'li) terimlerin <b>hepsi birbirini götürmek zorundadır!</b> (Çünkü \(y_1\) zaten denklemin çözümüdür). Götürmüyorsa türevde veya tam kare açılımında işaret hatası yapmışsındır!</li>
+          </ul>
+        </div>
+
+        <!-- KART 2: LİNEER VE BERNOULLİ -->
+        <div class="mem-card">
+          <span class="code-pill">Kodlama #2 · Lineer &amp; Bernoulli Kardeşliği</span>
+          <h3>📐 Uzun Lineer Formülünü Ezberleme!</h3>
+          <p style="font-size:0.92rem;color:var(--muted);margin-top:0;">
+            Slayttaki \(y = e^{-\int P dx}\left[\int Q e^{\int P dx}dx + c\right]\) formülünü ezberlemeye çalışmak yerine şu <b>2 adımlık çarpım türevi</b> mantığını kullan:
+          </p>
+          <div class="f-box" style="padding:10px 14px;">
+            1) \(\mu = e^{\int P(x)dx}\) bul.<br>
+            2) \(\mu \cdot y = \int \mu \cdot Q(x)\,dx + c\) yaz, iki tarafı \(\mu\)'ye böl!
+          </div>
+          <p style="font-size:0.92rem;margin:8px 0 0;">
+            <b>Bernoulli'yi Lineere Bağlama:</b> Sağda \(y^n\) varsa \(z = y^{1-n}\) yazılır. Neden \(1-n\)? Çünkü sol taraftaki \(y^1\)'i sağdaki \(y^n\)'e bölünce \(\frac{y^1}{y^n} = y^{1-n}\) kalır! Yeni üs olan \((1-n)\)'i hem \(P(x)\) hem \(Q(x)\)'in önüne çarpan olarak koy:
+            \[z' + (1-n)P(x)z = (1-n)Q(x)\]
+          </p>
+        </div>
+
+        <!-- KART 3: TAM DİFERANSİYEL & MU -->
+        <div class="mem-card">
+          <span class="code-pill">Kodlama #3 · Zıtların Uyumu (Tam &amp; μ)</span>
+          <h3>🧲 \(M_y = N_x\) ve İntegral Çarpanı Kodlaması</h3>
+          <ul style="padding-left:18px;font-size:0.92rem;margin:0;">
+            <li><b>Neden \(M_y = N_x\)? (Herkes Zıttına!):</b> \(M\) kimin yanında? \(dx\)'in! O zaman \(M\)'nin <b>\(y\)'ye göre</b> türevini al. \(N\) kimin yanında? \(dy\)'nin! O zaman \(N\)'nin <b>\(x\)'e göre</b> türevini al.</li>
+            <li><b>\(\mu(x)\) ve \(\mu(y)\) Formülünü Karıştırmama Sırrı:</b>
+              Pay kısmına her zaman <b>\(M_y - N_x\)</b> yaz:
+              <ul>
+                <li>Eğer <b>\(N\)'ye bölersen</b> (\(N\), \(dy\)'nin yanındakiydi, yine zıttı!): <b>\(x\)'e bağlı</b> \(f(x) = \frac{M_y - N_x}{N}\) çıkar (işareti <b>+</b>).</li>
+                <li>Eğer <b>\(M\)'ye bölersen</b>: <b>\(y\)'ye bağlı</b> \(g(y) = -\frac{M_y - N_x}{M} = \frac{N_x - M_y}{M}\) çıkar (işareti <b>-</b>).</li>
+              </ul>
+            </li>
+            <li><b>\(xM \mp yN\) Kodlaması:</b> Denklem <b>homojen</b> ise paydada <b>artı</b> (\(\mu = \frac{1}{xM+yN}\)), \(xy\) çarpımlı ise paydada <b>eksi</b> (\(\mu = \frac{1}{xM-yN}\)) vardır!</li>
+          </ul>
+        </div>
+
+        <!-- KART 4: NASIL ÇALIŞMALIYIM & SINAV TAKTİKLERİ -->
+        <div class="mem-card" style="border-top-color:#2b8a3e;">
+          <span class="code-pill" style="background:#ebfbee;border-color:#8ce99a;color:#2b8a3e;">Kodlama #4 · Çalışma Planı &amp; Test Taktikleri</span>
+          <h3>🚀 Bu Konuları Hangi Sırayla Öğrenmeliyim?</h3>
+          <ol style="padding-left:18px;font-size:0.92rem;margin:0;">
+            <li><b>Adım 1 (30 dk):</b> Önce <b>Lineer Denklem</b> (\(\mu y = \int \mu Q dx + c\)) çözmeyi oturt. Çünkü <b>Bernoulli</b> de <b>Riccati</b> de dönüşüm yapıldıktan sonra <b>Lineer Denklem</b> olarak çözülüyor! Lineer bilmek = 3 konuyu birden bilmektir!</li>
+            <li><b>Adım 2 (30 dk):</b> Sonra <b>Bernoulli</b> (\(z = y^{1-n}\)) ve <b>Riccati</b> (\(y = y_1 + \frac{1}{z}\) ve \(y = y_1 + z\)) dönüşümlerini çalış.</li>
+            <li><b>Adım 3 (30 dk):</b> <b>Tam Diferansiyel</b> (\(M_y = N_x\)) ve <b>İntegral Çarpanı</b> (\(\mu(x), \mu(y)\)) sorularını çöz.</li>
+            <li><b>Adım 4 (20 dk):</b> <b>Homojene Dönüştürülebilen</b> (\((h,k)\) kesim noktası ve \(z = ax+by\)) sorularını çöz ve en son <b>7. Hafta 23 Vize Sorusu</b> ile kendini test et!</li>
+          </ol>
+          <div style="background:#fff9db;border:1px solid #fcc419;border-radius:10px;padding:9px 12px;margin-top:10px;font-size:0.86rem;">
+            💡 <b>Sınavda 5 Saniye Taktiği:</b> Başlangıç değer problemlerinde (\(y(0)=3\) veya \(y(1)=2\) gibi) hiç denklem çözmeden şıklarda \(x\) yerine \(0\), \(y\) yerine \(3\) koy; sağlamayan şıkları anında ele!
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         BÖLÜM 4: PDF'LERDE NE ÇIKMIŞ? (5. VE 6. HAFTA TÜM ÖRNEKLER & ALIŞTIRMALAR)
+         ===================================================================== -->
+    <section class="sec" id="pdfler">
+      <div class="sec-head">
+        <div class="sec-icon">📚</div>
+        <h2>PDF'lerde Ne Çıkmış? (5. ve 6. Hafta Tüm Konu Özeti &amp; 54 Çözümlü Soru)</h2>
+      </div>
+      <p class="sec-lead">
+        Prof. Dr. Gözde ÖZKAN TÜKEL'in 5. Hafta (Bölüm 1 &amp; 2) ve 6. Hafta PDF slaytlarında yer alan <b>tüm konu özetleri, çözümlü örnekler, sıra sizde soruları ve alıştırmalar</b> aşağıdadır:
+      </p>
+
+      <!-- 3 PDF ÖZET KARTI -->
+      <div id="pdfSummaryContainer" style="display:grid;gap:14px;margin-bottom:20px;"></div>
+
+      <!-- FİLTRE VE ARAMA ÇUBUĞU -->
+      <div class="filter-bar">
+        <button class="f-btn active" onclick="filterPdfQuestions('all', this)">🌟 Tüm PDF Soruları (54 Soru / 22 Grup)</button>
+        <button class="f-btn" onclick="filterPdfQuestions('pdf1', this)">🧭 5. Hafta Böl.1: Homojene Dönüştürülebilen</button>
+        <button class="f-btn" onclick="filterPdfQuestions('pdf2', this)">💍 5. Hafta Böl.2: Tam Dif. &amp; İntegral Çarpanı</button>
+        <button class="f-btn" onclick="filterPdfQuestions('pdf3', this)">🔥 6. Hafta: Lineer, Bernoulli &amp; Riccati</button>
+        <input type="text" class="search-inp" id="pdfSearchInput" placeholder="🔍 Soru, denklem veya konu ara (örn: Riccati, Örnek 14, tan x)..." oninput="renderPdfQuestions()" />
+      </div>
+
+      <!-- SORU LİSTESİ -->
+      <div id="pdfQuestionsContainer"></div>
+    </section>
+
+    <!-- =====================================================================
+         BÖLÜM 5: 7. HAFTA VİZE HAZIRLIK PDF'İ (23 TEST SORUSU & ÇÖZÜMLERİ)
+         ===================================================================== -->
+    <section class="sec" id="vize7">
+      <div class="sec-head">
+        <div class="sec-icon">📝</div>
+        <h2>7. Hafta Vize Hazırlık PDF'i (23 Çoktan Seçmeli Soru &amp; Çözümleri)</h2>
+      </div>
+      <p class="sec-lead">
+        Hocanın 7. Hafta Vize Hazırlık sunumundaki <b>23 çoktan seçmeli sorunun tamamı</b>! Şıklara tıklayarak kendin çözebilir, <b>“💡 Hangi Formül?”</b> butonuyla ipucu alabilir veya tüm çözümleri tek tıkla açabilirsin.
+      </p>
+
+      <!-- HOCANIN SON SLAYTTAKİ 4 ALTIN UYARISI -->
+      <div class="card" style="background:linear-gradient(135deg,#fff9db,#fff4e6);border-color:#fcc419;">
+        <h3 style="color:#b45309;margin-bottom:8px;">⚠️ Hocanın 7. Hafta Slaytındaki (Sayfa 89) “Sınavda Nelere Dikkat Edilmeli?” Uyarıları</h3>
+        <ol style="margin:0;padding-left:20px;font-size:0.93rem;color:#78350f;">
+          <li><b>Denklem her zaman önce standart biçime getirilir;</b> tip ancak ondan sonra belli olur (Örn: \(xy' + 2y = 4x^2\) önce \(x\)'e bölünür!).</li>
+          <li><b>Lineer ve Bernoulli sorularında \(P(x)\) ile \(Q(x)\) yanlış okunursa</b> (veya işaretleri unutulursa) bütün çözüm kayar.</li>
+          <li><b>Öteleme yapılan sorularda</b> sonuçta \(X, Y\) yerine \(x - h, y - k\) yazmak unutulmamalıdır.</li>
+          <li><b>Şıklar birbirine yakın olduğunda,</b> bulunan çözümü (veya başlangıç koşulunu) denklemde yerine koyarak kontrol etmek en hızlı yoldur.</li>
+        </ol>
+      </div>
+
+      <!-- QUIZ KONTROL BAR -->
+      <div class="quiz-bar">
+        <span style="font-weight:800;font-size:0.9rem;color:var(--pri);" id="quizScoreText">📊 İşaretlenen: 0 / 23 · Doğru: 0</span>
+        <div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;">
+          <button class="btn-sm pri" onclick="toggleAllQuizSolutions(true)">👁️ Tüm Çözümleri Aç</button>
+          <button class="btn-sm" onclick="toggleAllQuizSolutions(false)">🙈 Çözümleri Gizle</button>
+          <button class="btn-sm" onclick="resetQuiz7()">🔄 Testi Sıfırla</button>
+        </div>
+      </div>
+
+      <!-- 23 SORU ALANI -->
+      <div id="quiz7Container"></div>
+    </section>
+
+  </div>
+
+  <footer>
+    Prof. Dr. Gözde ÖZKAN TÜKEL'in 5, 6 ve 7. Hafta Diferansiyel Denklemler ders materyallerinden birebir hazırlanmıştır.<br>
+    İstediğin zaman bu linkten açıp formülleri, teşhis sihirbazını ve tüm çözümlü soruları çalışabilirsin. Başarılar! 🎓
+  </footer>
+
+  <!-- VERİ DOSYALARI -->
+  <script src="data-pdfs.js"></script>
+  <script src="data-quiz7.js"></script>
+
+  <!-- UYGULAMA MANTIĞI -->
+  <script>
+    const RW = String.raw;
+
+    // 1. SİHİRBAZ VERİLERİ
+    const WIZARD_DATA = {
+      riccati: {
+        title: "🔥 Teşhis: %100 RİCCATİ DİFERANSİYEL DENKLEMİ!",
+        desc: RW`Soruda <b>“bir özel çözümü \(y_1 = \dots\)”</b> (veya iki/üç özel çözümü) kelimesini gördüğün anda hiç tereddüt etme: Bu soru kesinlikle <b>Riccati Denklemi</b>dir (\(\frac{dy}{dx} + P(x)y + R(x) = Q(x)y^2\)).`,
+        formula: RW`\text{1) Doğrudan Lineere İndirgeme: } y = y_1 + \frac{1}{z} \implies y' = y_1' - \frac{z'}{z^2} \\[6pt]
+\text{2) Önce Bernoulli'ye İndirgeme: } y = y_1 + z \implies y' = y_1' + z' \;\;(\text{sonra } u = \frac{1}{z})`,
+        cards: [
+          {
+            h: "Durum A: \(y = y_1 + \frac{1}{z}\) (Tek Adımda Lineer!)",
+            b: RW`En hızlı yoldur! \(y = y_1 + \frac{1}{z}\) ve \(y' = y_1' - \frac{z'}{z^2}\) ifadelerini denklemde yerine koy. \(z\)'siz terimler birbirini götürür, her yeri \(-z^2\) ile çarpınca doğrudan \(z\)'ye göre <b>Lineer Denklem</b> çıkar!<br><small>📌 <b>7. Hafta Soru 19–20</b> ve <b>6. Hafta Örnek 14, 18</b> bu yöntemle çözüldü.</small>`
+          },
+          {
+            h: "Durum B: \(y = y_1 + z\) (Önce Bernoulli, Sonra Lineer)",
+            b: RW`Eğer soru kökünde <i>“\(y = y_1 + z\) dönüşümü uygulandığında elde edilen Bernoulli denklemi”</i> diyorsa bunu kullan! Yerine koyunca \(z' + \dots = Q(x)z^2\) Bernoulli denklemi çıkar, ardından \(u = z^{-1}\) ile lineere çevrilir.<br><small>📌 <b>7. Hafta Soru 21–23</b> ve <b>6. Hafta Örnek 13</b> bu yöntemle çözüldü.</small>`
+          },
+          {
+            h: "Durum C: 2 Özel Çözüm (\(y_1, y_2\)) Verildiyse",
+            b: RW`Dönüşüm yapma! Doğrudan şu formülü yaz:\[\frac{y - y_1}{y - y_2} = c\,e^{\int (y_1 - y_2)Q(x)\,dx}\]Burada \(Q(x)\), \(y' = \dots + Q(x)y^2\) kalıbındaki \(y^2\)'nin katsayısıdır!<br><small>📌 <b>6. Hafta Örnek 15</b></small>`
+          },
+          {
+            h: "Durum D: 3 Özel Çözüm (\(y_1, y_2, y_3\)) Verildiyse",
+            b: RW`İntegral bile alma! Doğrudan çapraz oran formülünü yaz:\[\frac{y - y_1}{y - y_2}\cdot\frac{y_3 - y_2}{y_3 - y_1} = c\]<small>📌 <b>6. Hafta Örnek 16</b></small>`
+          }
+        ]
+      },
+      bernoulli: {
+        title: "⚡ Teşhis: %100 BERNOULLİ DİFERANSİYEL DENKLEMİ!",
+        desc: RW`Denklemde özel çözüm verilmemiş, sol tarafta \(y' + P(x)y\) var ama sağ tarafta <b>\(Q(x)y^n\)</b> (\(y^2, y^3, y^4\) gibi) bir çarpan var! (Yanında \(+x\) gibi \(y\)'siz terim yoksa Bernoulli'dir).`,
+        formula: RW`\text{Standart Biçim: } \frac{dy}{dx} + P(x)y = Q(x)y^n \quad\xrightarrow{z = y^{1-n}}\quad \frac{dz}{dx} + (1-n)P(x)z = (1-n)Q(x)`,
+        cards: [
+          {
+            h: "1. Adım: \(y'\)'nün Katsayısını 1 Yap ve \(n\)'i Oku",
+            b: RW`Önce \(y'\)'nün önünde \(x\) gibi bir katsayı varsa iki tarafı ona böl. Sağdaki \(y^n\) teriminden \(n\) sayısını oku (Örn: \(y^2\) ise \(n=2\), \(y^4\) ise \(n=4\)).`
+          },
+          {
+            h: "2. Adım: \(z = y^{1-n}\) Dönüşümüyle Lineere Çevir",
+            b: RW`Her tarafı \(y^n\)'e bölüp \(z = y^{1-n}\) yazdığında denklem şu Lineer Denkleme dönüşür:\[\frac{dz}{dx} + (1-n)P(x)z = (1-n)Q(x)\]Örn: \(n=2\) ise \(1-n = -1\) olduğundan hem \(P\) hem \(Q\) eksi ile çarpılır!`
+          },
+          {
+            h: "3. Adım: Lineer Çöz ve \(z = y^{1-n}\) Geri Yaz!",
+            b: RW`\(\mu(x) = e^{\int (1-n)P(x)dx}\) ile \(z\)'yi bul:\[\mu \cdot z = \int \mu \cdot (1-n)Q(x)\,dx + c\]En son \(z\) yerine \(\frac{1}{y^{n-1}}\) yazıp \(y\)'yi yalnız bırak!<br><small>📌 <b>7. Hafta Soru 17–18</b> ve <b>6. Hafta Örnek 8–12</b></small>`
+          }
+        ]
+      },
+      lineer: {
+        title: "📐 Teşhis: 1. MERTEBEDEN LİNEER DİFERANSİYEL DENKLEM!",
+        desc: RW`Denklemde sadece \(y'\) ve \(y\)'nin 1. kuvveti var (\(y^2, y^3, \sin y\) yok). Veya ters çevirdiğinde (\(\frac{dx}{dy}\)) sadece \(x\)'in 1. kuvveti var!`,
+        formula: RW`\frac{dy}{dx} + P(x)y = Q(x) \quad\implies\quad \mu(x) = e^{\int P(x)\,dx} \quad\implies\quad \mu(x)\cdot y = \int \mu(x)Q(x)\,dx + c`,
+        cards: [
+          {
+            h: "1. Adım: Standart Biçime Getir",
+            b: RW`\(y'\)'nün katsayısı mutlaka <b>1</b> olmalı! Örneğin \(x y' + 2y = 4x^2\) verilmişse iki tarafı \(x\)'e böl: \(y' + \frac{2}{x}y = 4x\). Buradan \(P(x) = \frac{2}{x}\) ve \(Q(x) = 4x\) oku.`
+          },
+          {
+            h: "2. Adım: İntegral Çarpanı \(\mu(x)\)'i Hesapla",
+            b: RW`\[\mu(x) = e^{\int P(x)\,dx}\]Örn: \(P(x) = \frac{2}{x}\) ise \(\mu = e^{2\ln x} = x^2\). Eğer \(P(x) = -\frac{1}{x}\) ise \(\mu = e^{-\ln x} = \frac{1}{x}\).`
+          },
+          {
+            h: "3. Adım: Çözümü Tek Satırda Yaz",
+            b: RW`\[\mu(x)\cdot y = \int \mu(x)Q(x)\,dx + c\]İntegrali al, sabit \(+c\)'yi ekle ve iki tarafı \(\mu(x)\)'e böl!<br><small>📌 <b>Tuzak (Örnek 6):</b> \(\frac{dy}{dx} = \frac{1}{x+y^2}\) gibi soruda ters çevir: \(\frac{dx}{dy} - x = y^2\) (\(x\)'e göre lineer!).</small>`
+          }
+        ]
+      },
+      homojen_don: {
+        title: "🧭 Teşhis: HOMOJEN HALE DÖNÜŞTÜRÜLEBİLEN DENKLEM!",
+        desc: RW`Denklemde \((a_1x + b_1y + c_1)dx + (a_2x + b_2y + c_2)dy = 0\) veya \(y' = F\left(\frac{a_1x+b_1y+c_1}{a_2x+b_2y+c_2}\right)\) gibi <b>sabit terimli (\(c_1, c_2\)) doğrular</b> var!`,
+        formula: RW`\text{Kesişiyorsa } \left(\frac{a_1}{a_2} \neq \frac{b_1}{b_2}\right): x = X+h,\; y = Y+k \;\xrightarrow{\text{Homojen}}\; Y = UX \quad\Big|\quad \text{Paralelse } \left(\frac{a_1}{a_2} = \frac{b_1}{b_2}\right): z = a_1x + b_1y`,
+        cards: [
+          {
+            h: "Durum 1: Doğrular Kesişiyorsa (\(\frac{a_1}{a_2} \neq \frac{b_1}{b_2}\))",
+            b: RW`1) İki doğruyu sıfıra eşitleyip çöz: \(\begin{cases}a_1h + b_1k + c_1 = 0 \\ a_2h + b_2k + c_2 = 0\end{cases} \implies (h, k)\) bul.<br>2) \(x = X+h,\; y = Y+k\) yaz (sabitler silinir, denklem \(X, Y\)'ye göre homojen olur).<br>3) \(Y = UX \implies dY = U\,dX + X\,dU\) yazıp değişkenlerine ayır.<br>4) En son \(U = \frac{Y}{X}\) ve \(X = x-h,\; Y = y-k\) geri koy!<br><small>📌 <b>7. Hafta Soru 6–8</b></small>`
+          },
+          {
+            h: "Durum 2: Doğrular Paralelse (\(\frac{a_1}{a_2} = \frac{b_1}{b_2}\))",
+            b: RW`Örn: \((x+y+1)dx + (2x+2y-1)dy = 0\). Burada \(2x+2y = 2(x+y)\) olduğu için kesim noktası yoktur!<br>1) Ortak ifadeye \(z = x+y \implies dy = dz - dx\) de.<br>2) Denklem doğrudan \(x\) ve \(z\)'ye göre <b>değişkenlerine ayrılabilir</b> hale gelir!<br><small>📌 <b>5. Hafta Böl.1 Örnek 2 &amp; Sıra Sizde 3</b></small>`
+          }
+        ]
+      },
+      tam: {
+        title: "💍 Teşhis: TAM DİFERANSİYEL DENKLEM (\(M_y = N_x\))!",
+        desc: RW`\(M(x,y)dx + N(x,y)dy = 0\) denkleminde çapraz türevleri aldığında <b>\(\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}\)</b> eşitliği sağlanıyor!`,
+        formula: RW`\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x} \quad\implies\quad F(x,y) = \int M(x,y)\,dx + \phi(y) = c \quad\left(\text{burada } \frac{\partial F}{\partial y} = N(x,y)\right)`,
+        cards: [
+          {
+            h: "Klasik Yöntem (3 Adım)",
+            b: RW`1) \(F(x,y) = \int M(x,y)\,dx + \phi(y)\) yaz (\(y\)'yi sabit tutarak \(x\)'e göre integral al).<br>2) Bulduğun ifadenin \(y\)'ye göre türevini alıp \(N(x,y)\)'ye eşitle: \(\frac{\partial F}{\partial y} = N(x,y) \implies \phi'(y)\) bulunur.<br>3) \(\phi(y) = \int \phi'(y)\,dy\) bul ve <b>\(F(x,y) = c\)</b> genel çözümünü yaz!`
+          },
+          {
+            h: "⚡ 10 Saniyelik Test Kısayolu!",
+            b: RW`Tam diferansiyel olduğunu doğruladıktan sonra:<br>1) \(M\)'nin \(x\)'e göre integralini al.<br>2) \(N\)'nin içindeki <b>yalnız \(y\)'ye bağlı (\(x\) içermeyen) terimlerin</b> \(y\)'ye göre integralini yanına ekle ve \(= c\) de! (Ortak terimler zaten \(M\)'nin integralinden gelmiştir!).`
+          }
+        ]
+      },
+      integral_carpani: {
+        title: "🧲 Teşhis: İNTEGRAL ÇARPANI (\(\mu\)) — 5 DURUM REÇETESİ!",
+        desc: RW`\(M(x,y)dx + N(x,y)dy = 0\) denkleminde \(M_y \neq N_x\) çıktı! Denklemi tam diferansiyel yapan \(\mu\) çarpanını bulmak için hocanın 5 kuralını sırayla kontrol et:`,
+        formula: RW`\text{Durum a (Yalnız } x\text{): } f(x) = \frac{M_y - N_x}{N} \implies \mu(x) = e^{\int f(x)dx} \quad\Big|\quad \text{Durum b (Yalnız } y\text{): } g(y) = \frac{N_x - M_y}{M} \implies \mu(y) = e^{\int g(y)dy}`,
+        cards: [
+          {
+            h: "Durum a: \(\mu(x)\) Yalnız \(x\)'e Bağlı İse",
+            b: RW`\(M_y - N_x\) farkını <b>\(N\)'ye böl</b>:\[f(x) = \frac{1}{N}\left(\frac{\partial M}{\partial y} - \frac{\partial N}{\partial x}\right)\]Eğer sonuçta hiç \(y\) kalmıyorsa \(\mu(x) = e^{\int f(x)dx}\)'tir!<br><small>📌 <b>7. Hafta Soru 9–11:</b> \(f(x)=3 \implies \mu = e^{3x}\).</small>`
+          },
+          {
+            h: "Durum b: \(\mu(y)\) Yalnız \(y\)'ye Bağlı İse",
+            b: RW`\(N_x - M_y\) farkını <b>\(M\)'ye böl</b> (veya \(-\frac{M_y-N_x}{M}\)): \[g(y) = -\frac{1}{M}\left(\frac{\partial M}{\partial y} - \frac{\partial N}{\partial x}\right) = \frac{N_x - M_y}{M}\]Eğer sonuçta hiç \(x\) kalmıyorsa \(\mu(y) = e^{\int g(y)dy}\)'dir!<br><small>📌 <b>7. Hafta Soru 12–13:</b> \(g(y)=\frac{2}{y} \implies \mu = y^2\).</small>`
+          },
+          {
+            h: "Durum c & d: \(xy\) Çarpımlı veya Homojen İse",
+            b: RW`• <b>Durum c (\(y\,f(xy)dx + x\,g(xy)dy = 0\)):</b>\[\mu = \frac{1}{xM - yN}\]• <b>Durum d (Denklem Homojen ise):</b>\[\mu = \frac{1}{xM + yN}\]<small>📌 <b>5. Hafta Böl.2 Örnek 9 ve Örnek 10</b></small>`
+          },
+          {
+            h: "Durum e: Çarpanlarına Ayrılıyorsa",
+            b: RW`\(f_1(x)g_1(y)dx + f_2(x)g_2(y)dy = 0\) biçimindeyse:\[\mu = \frac{1}{f_2(x)g_1(y)}\]Denklemi doğrudan değişkenlerine ayırır!<br><small>📌 <b>5. Hafta Böl.2 Örnek 11</b></small>`
+          }
+        ]
+      }
+    };
+
+    function renderMath(el) {
+      if (window.renderMathInElement) {
+        window.renderMathInElement(el || document.body, {
+          delimiters: [
+            { left: "\\[", right: "\\]", display: true },
+            { left: "\\(", right: "\\)", display: false }
+          ],
+          throwOnError: false
+        });
+      }
+    }
+
+    function selectWizard(key, btnEl) {
+      document.querySelectorAll('.wiz-btn').forEach(b => b.classList.remove('active'));
+      if (btnEl) btnEl.classList.add('active');
+      const d = WIZARD_DATA[key];
+      const panel = document.getElementById('wizPanel');
+      panel.innerHTML = `
+        <h3>${d.title}</h3>
+        <p style="margin:0 0 10px;font-size:0.96rem;">${d.desc}</p>
+        <div class="f-box">
+          <span class="fb-label">📌 Uygulayacağın Ana Formül</span>
+          \\[${d.formula}\\]
+        </div>
+        <div class="sub-grid">
+          ${d.cards.map(c => `
+            <div class="sub-card">
+              <h4>${c.h}</h4>
+              <div style="font-size:0.9rem;color:#2b3448;">${c.b}</div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+      renderMath(panel);
+    }
+
+    // 2. PDF ÖZETLERİ VE SORULARINI RENDER ETME
+    let currentPdfFilter = 'all';
+
+    function renderPdfSummaries() {
+      const container = document.getElementById('pdfSummaryContainer');
+      container.innerHTML = window.PDF_SUMMARIES.map(s => `
+        <div class="card" style="margin-bottom:0;">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:8px;">
+            <span class="q-badge" style="background:var(--pri);">${s.badge}</span>
+            <span style="font-size:0.82rem;font-weight:700;color:var(--muted);">Prof. Dr. Gözde ÖZKAN TÜKEL</span>
+          </div>
+          <h3>${s.title} — Bu PDF'te Ne Çıkmış?</h3>
+          <ul style="margin:0 0 12px;padding-left:20px;font-size:0.93rem;">
+            ${s.whatCameOut.map(item => `<li style="margin-bottom:4px;">${item}</li>`).join('')}
+          </ul>
+          <div class="formula-strip" style="margin-bottom:0;">
+            <b class="lbl">⚡ Bu PDF'in Özeti Formül</b>
+            \\[${s.formulaBox}\\]
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filterPdfQuestions(pdfId, btnEl) {
+      currentPdfFilter = pdfId;
+      document.querySelectorAll('.filter-bar .f-btn').forEach(b => b.classList.remove('active'));
+      if (btnEl) btnEl.classList.add('active');
+      renderPdfQuestions();
+    }
+
+    function renderPdfQuestions() {
+      const qSearch = (document.getElementById('pdfSearchInput')?.value || '').toLowerCase().trim();
+      const container = document.getElementById('pdfQuestionsContainer');
+      const filtered = window.PDF_QUESTIONS.filter(item => {
+        if (currentPdfFilter !== 'all' && item.pdf !== currentPdfFilter) return false;
+        if (!qSearch) return true;
+        const hay = (item.badge + ' ' + item.topic + ' ' + item.q + ' ' + item.howToSpot + ' ' + item.formulaUsed).toLowerCase();
+        return hay.includes(qSearch);
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `<div class="card" style="text-align:center;color:var(--muted);">Aramana uygun soru bulunamadı. Filtreyi sıfırlamayı dene.</div>`;
+        return;
+      }
+
+      container.innerHTML = filtered.map(item => `
+        <div class="q-card">
+          <div class="q-top">
+            <span class="q-badge">${item.badge}</span>
+            <span class="q-topic">${item.topic}</span>
+          </div>
+          <div class="q-body">${item.q}</div>
+          <div class="spot-box">
+            <b class="lbl">👀 Soruyu Görünce Nasıl Tanırım?</b>
+            ${item.howToSpot}
+          </div>
+          <div class="formula-strip">
+            <b class="lbl">📐 Uygulanan Formül / Dönüşüm</b>
+            \\(${item.formulaUsed}\\)
+          </div>
+          <ul class="steps-list">
+            ${item.steps.map((st, idx) => `
+              <li data-step="${idx + 1}">
+                <b class="st-t">${st[0]}</b>
+                <div class="st-d">${st[1]}</div>
+              </li>
+            `).join('')}
+          </ul>
+          <div class="trap-box">
+            ⚠️ <b>Sınav Uyarısı / Püf Noktası:</b> ${item.trap}
+          </div>
+        </div>
+      `).join('');
+
+      renderMath(container);
+    }
+
+    // 3. 7. HAFTA 23 VİZE SORUSU RENDER VE ETKİLEŞİMİ
+    const quizState = {}; // { [n]: selectedIdx }
+    const LETTERS = ['a', 'b', 'c', 'd', 'e'];
+
+    function renderQuiz7() {
+      const container = document.getElementById('quiz7Container');
+      let html = '';
+
+      window.QUIZ7_QUESTIONS.forEach(item => {
+        if (window.QUIZ7_BLOCKS[item.n]) {
+          const blk = window.QUIZ7_BLOCKS[item.n];
+          html += `
+            <div class="q-block-banner">
+              <div class="b-title">${blk.title}</div>
+              <div style="font-size:0.95rem;margin-top:4px;">${blk.desc}</div>
+            </div>
+          `;
+        }
+
+        html += `
+          <div class="q-card" id="q7-card-${item.n}">
+            <div class="q-top">
+              <span class="q-badge">Soru ${item.n}</span>
+              <span class="q-topic">${item.topic}</span>
+              <button class="btn-sm" style="margin-left:auto;color:#d9480f;border-color:#ffd8a8;background:#fff4e6;" onclick="toggleHint7(${item.n})">💡 Hangi Formül? (İpucu)</button>
+              <button class="btn-sm" onclick="toggleSol7(${item.n})">📖 Çözümü Göster</button>
+            </div>
+            <div class="q-body">${item.q}</div>
+
+            <div id="q7-hint-${item.n}" style="display:none;background:#fff9db;border:1px dashed #fcc419;border-radius:10px;padding:10px 14px;margin-bottom:10px;font-size:0.91rem;">
+              🧭 <b>Uygulanacak Formül &amp; İpucu:</b> ${item.formulaHint}
+            </div>
+
+            <div class="opts-grid" id="q7-opts-${item.n}">
+              ${item.opts.map((optText, idx) => `
+                <div class="opt-row" id="q7-opt-${item.n}-${idx}" onclick="pickQuiz7(${item.n}, ${idx})">
+                  <span class="opt-l">${LETTERS[idx]}</span>
+                  <div style="flex:1;">${optText}</div>
+                  <span id="q7-badge-${item.n}-${idx}" style="font-size:0.78rem;font-weight:800;"></span>
+                </div>
+              `).join('')}
+            </div>
+
+            <div id="q7-sol-${item.n}" style="display:none;margin-top:14px;border-top:2px dashed var(--line);padding-top:12px;">
+              <div class="spot-box" style="margin-bottom:8px;">
+                <b class="lbl">✅ Doğru Cevap: ${LETTERS[item.ans]}) Şıkkı · Adım Adım Slayt Çözümü</b>
+                ${item.sol}
+              </div>
+            </div>
+          </div>
+        `;
+      });
+
+      container.innerHTML = html;
+      renderMath(container);
+      updateQuizScore();
+    }
+
+    function pickQuiz7(n, idx) {
+      quizState[n] = idx;
+      const item = window.QUIZ7_QUESTIONS.find(x => x.n === n);
+      if (!item) return;
+
+      item.opts.forEach((_, i) => {
+        const row = document.getElementById(`q7-opt-${n}-${i}`);
+        const bdg = document.getElementById(`q7-badge-${n}-${i}`);
+        row.classList.remove('ok', 'bad');
+        bdg.textContent = '';
+        if (i === item.ans) {
+          row.classList.add('ok');
+          bdg.textContent = '✓ DOĞRU';
+          bdg.style.color = 'var(--ok)';
+        } else if (i === idx && idx !== item.ans) {
+          row.classList.add('bad');
+          bdg.textContent = '✗ YANLIŞ';
+          bdg.style.color = 'var(--bad)';
+        }
+      });
+
+      document.getElementById(`q7-sol-${n}`).style.display = 'block';
+      updateQuizScore();
+    }
+
+    function toggleHint7(n) {
+      const el = document.getElementById(`q7-hint-${n}`);
+      el.style.display = el.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function toggleSol7(n) {
+      const el = document.getElementById(`q7-sol-${n}`);
+      el.style.display = el.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function toggleAllQuizSolutions(show) {
+      window.QUIZ7_QUESTIONS.forEach(item => {
+        const sol = document.getElementById(`q7-sol-${item.n}`);
+        const hint = document.getElementById(`q7-hint-${item.n}`);
+        if (sol) sol.style.display = show ? 'block' : 'none';
+        if (hint) hint.style.display = show ? 'block' : 'none';
+      });
+    }
+
+    function resetQuiz7() {
+      Object.keys(quizState).forEach(k => delete quizState[k]);
+      renderQuiz7();
+    }
+
+    function updateQuizScore() {
+      const answered = Object.keys(quizState).length;
+      let correct = 0;
+      Object.entries(quizState).forEach(([nStr, idx]) => {
+        const q = window.QUIZ7_QUESTIONS.find(x => x.n === Number(nStr));
+        if (q && q.ans === idx) correct++;
+      });
+      const el = document.getElementById('quizScoreText');
+      if (el) el.textContent = `📊 İşaretlenen: ${answered} / 23 · Doğru: ${correct}`;
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      selectWizard('riccati', document.querySelector('.wiz-btn'));
+      renderPdfSummaries();
+      renderPdfQuestions();
+      renderQuiz7();
+      renderMath(document.body);
+    });
+  </script>
+</body>
+</html>
